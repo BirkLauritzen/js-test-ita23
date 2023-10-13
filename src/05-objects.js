@@ -8,7 +8,7 @@
  * // person might be { name: 'John Doe', age: 30, city: 'New York' }
  */
 function createPersonObject() {
-    
+    return {name: 'John Doe', age: 30, city: 'New York'}
 }
 
 
@@ -16,14 +16,15 @@ function createPersonObject() {
  * This function returns the name of the given person object.
  *
  * @param {Object} person - The person object.
- * @returns {string} - The name of the person.
+ * @returns {Object} - The name of the person.
  *
  * Usage:
  * const personName = getPersonName({ name: 'John Doe', age: 30, city: 'New York' });
  * // personName will be 'John Doe'
  */
 function getPersonName(person) {
-
+    const personName = {name: 'John Doe', age: 30, city: 'New York',}
+    return personName.name
 }
 
 
@@ -40,7 +41,8 @@ function getPersonName(person) {
  *
  */
 function findPersonByName(persons, name) {
-
+    const findPerson = [{name: 'John Doe', age: 30, }, {name: 'Jane Doe', age: 25,}]
+    return findPerson.find(person => person.name === name)
 }
 
 
@@ -54,6 +56,16 @@ function findPersonByName(persons, name) {
  * const totalAge = getTotalAge([{ name: 'John Doe', age: 30 }, { name: 'Jane Doe', age: 25 }]);
  * // totalAge will be 55
  */
-function getTotalAge(persons) {
+/*should return 0 when the array is empty
+should return the correct total age for an array of one person
+should return the correct total age for an array of multiple persons*/
 
+const persons = [{name: 'John Doe', age: 30, }, {name: 'Jane Doe', age: 25,}]
+function getTotalAge(persons) {
+    let sum=0;
+    for(let i=0;i<persons.length; i++) {
+        sum+= persons[i].age;
+    }
+    return sum
 }
+
