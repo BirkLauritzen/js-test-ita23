@@ -68,4 +68,3 @@ function getTotalAge(persons) {
     }
     return sum
 }
-
